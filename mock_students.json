@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Aisha Khan", "age": 20, "grade": "A", "major": "Computer Science" },
+  { "id": 2, "name": "Liam Torres", "age": 22, "grade": "B+", "major": "Mathematics" },
+  { "id": 3, "name": "Priya Sharma", "age": 21, "grade": "A-", "major": "Physics" },
+  { "id": 4, "name": "James Obi", "age": 23, "grade": "B", "major": "Engineering" },
+  { "id": 5, "name": "Sofia Reyes", "age": 20, "grade": "A+", "major": "Data Science" }
+]
