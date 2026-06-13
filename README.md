@@ -1,7 +1,7 @@
-# My Test Project
+# Claude Partner Network Course
 
 ## What
-A simple Node.js experiment project with Claude Code skills for FastAPI endpoint generation and README updates.
+A FastAPI project built as part of the Claude Partner Network (CPN) course, demonstrating Claude Code skills for endpoint generation and README updates.
 
 ## Installation
 ```bash
