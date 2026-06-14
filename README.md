@@ -40,3 +40,4 @@ API docs available at http://127.0.0.1:8000/docs
 - `CLAUDE.md` - Guidance for Claude Code: dev commands, architecture notes, and project conventions
 - `.claude/skills/add-endpoint/` - Project skill for scaffolding new FastAPI endpoints
 - `.claude/skills/update-exp-readme/` - Project skill for updating this README
+- `.claude/agents/readme-updater-agent.md` - Custom agent for delegating README update tasks
