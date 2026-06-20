@@ -28,6 +28,7 @@ API docs available at http://127.0.0.1:8000/docs
 - `GET /students` - Return all students
 - `GET /students/{student_id}` - Return a student by ID
 - `GET /students/major/{major}` - Return all students by major (case-insensitive)
+- `GET /students/subject/mathematics` - Return all students with Mathematics as their major
 - `POST /students` - Create a new student
 - `PUT /students/{student_id}` - Update a student by ID
 - `DELETE /students/{student_id}` - Delete a student by ID
