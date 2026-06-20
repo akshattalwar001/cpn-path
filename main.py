@@ -37,6 +37,14 @@ async def get_students_by_major(major: str):
     return results
 
 
+@app.get("/students/subject/mathematics", response_model=List[Student])
+async def get_mathematics_students():
+    results = [s for s in students if s["major"].lower() == "mathematics"]
+    if not results:
+        raise HTTPException(status_code=404, detail="No students found with Mathematics as their subject")
+    return results
+
+
 @app.get("/students/{student_id}", response_model=Student)
 async def get_student(student_id: int):
     student = next((s for s in students if s["id"] == student_id), None)
