@@ -69,11 +69,18 @@ The notebook implements a prompt eval pipeline for AWS-related code generation t
 
 | # | Task |
 |---|---|
-| 1 | Validate an AWS S3 bucket name with a Python function |
+| 1 | Parse an AWS S3 bucket name from an S3 URI |
 | 2 | Create an IAM policy JSON for read-only S3 access |
 | 3 | Write a regex matching valid EC2 instance IDs |
 
+**Grader:** `grade_by_model(test_case, output)` sends the task and model output to Claude for evaluation. Uses prefill and a stop sequence to extract a structured JSON response with `strengths`, `weaknesses`, `reasoning`, and `score` (1-10).
+
+**Eval pipeline:**
+
+- `run_prompt(test_case)` merges a dataset entry into the prompt template and calls Claude
+- `run_test_case(test_case)` calls `run_prompt`, then grades the output with `grade_by_model` and returns the score and reasoning
+- `run_eval(dataset)` loops over all dataset entries, collects results, and prints the average score
+
 ### Next steps
-- Run prompts through the model against the dataset
-- Grade responses with a second Claude call (1-10 scoring)
-- Compare prompt versions by average score
+- Run the full pipeline end-to-end and record the baseline average score
+- Iterate on the prompt and compare average scores across versions
