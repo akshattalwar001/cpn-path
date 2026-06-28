@@ -2,14 +2,16 @@ Rules of prompt caching
 -----------------------
 
 Prompt caching in Claude works by storing the computational work done on your messages so it can be reused in follow-up requests. This makes subsequent requests both faster and cheaper to execute, but only when you're repeatedly sending identical content.
-![alt text](image.png)
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/844adbdd-cfaf-4140-8566-c7017b39341a" />
+
 The process is straightforward: your initial request writes processing work to the cache, and follow-up requests can read from that cache instead of reprocessing the same content. The cache lives for one hour, so this feature is only useful if you're repeatedly sending the same content within that timeframe.
 
 Cache Breakpoints
 -----------------
 
 Caching isn't enabled automatically - you need to manually add cache breakpoints to specific blocks in your messages. Here's how it works:
-![alt text](image-1.png)
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/ed476687-5edf-42ae-8ee9-d28814978e96" />
+
 *   Work done on messages is **not cached automatically**
     
 *   You must manually add a 'cache breakpoint' to a block
@@ -20,6 +22,7 @@ Caching isn't enabled automatically - you need to manually add cache breakpoints
     
 
 To add a cache breakpoint, you need to use the longhand form for writing text blocks instead of the shorthand:
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/a74df6dd-3813-49c6-8ce2-bd609bb8062a" />
 
 The shorthand form doesn't provide a place to add the cache control field, so you must use the expanded format with the **cache\_control** field set to **{"type": "ephemeral"}**.
 
@@ -64,6 +67,7 @@ Minimum Content Length
 ----------------------
 
 There's a minimum threshold for caching: content must be at least 1024 tokens long to be cached. This is the sum of all messages and blocks you're trying to cache, not individual blocks.
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/76b67083-20dd-453c-b4d0-42dff52f2b7c" />
 
 A simple "Hi there!" message won't meet this threshold, but if you duplicate that content 500 times (or have a genuinely long prompt), it will exceed 1024 tokens and be eligible for caching.
 
