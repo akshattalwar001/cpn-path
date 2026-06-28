@@ -1,44 +1,51 @@
-# Claude Partner Network Course
+# Claude API: Learning Experiments
 
-## What
-A FastAPI student data API built as part of the Claude Partner Network (CPN) course, demonstrating Claude Code skills for endpoint generation, project scaffolding, and README management.
+A personal learning repo for exploring the Claude API hands-on. Each notebook covers one concept, building up from basic API calls to RAG pipelines and extended thinking.
 
-## Installation
+## Setup
 
 ```bash
-# Create and activate virtual environment
 python -m venv venv
-venv\Scripts\Activate.ps1        # PowerShell
-venv\Scripts\activate.bat        # CMD
+venv\Scripts\Activate.ps1
 
-# Install dependencies
 pip install -r requirements.txt
+venv\Scripts\pip install jupyter ipykernel sentence-transformers rank-bm25
+venv\Scripts\python -m ipykernel install --user --name exp-venv --display-name "Python (exp-venv)"
 ```
 
-## Usage
+Open notebooks in VS Code and select the **Python (exp-venv)** kernel.
+
+## What's Covered
+
+### Claude API Basics
+- `001_requests.ipynb`: first API call, message structure
+- `002_system_prompts.ipynb`: shaping model behavior with system prompts
+- `003_streaming.ipynb`: streaming responses
+- `004_structured_data.ipynb`: extracting structured output
+
+### Prompt Engineering
+- `prompt_eng/001_prompting.ipynb`: prompting techniques and patterns
+- `prompt_eval/001_prompt_evals.ipynb`: evaluating and comparing prompts
+
+### Tool Use
+- `tool_use/001_tool_use.ipynb`: giving Claude tools to call
+- `tool_use/001_multi_tools.ipynb`: multiple tools in one turn
+- `tool_use/Fine-Grained Tool Calling/`: streaming tool calls with fine-grained control
+- `tool_use/001_text_editor_tool.ipynb`: Claude's built-in text editor tool for file editing
+
+### RAG (Retrieval-Augmented Generation)
+- `RAG/001_chunking.ipynb`: four chunking strategies (character, section, sentence, semantic)
+- `RAG/002_searching-n-embeddings.ipynb`: semantic search with sentence-transformers
+- `RAG/003_unified_hybrid_search.ipynb`: hybrid search combining BM25 and vector search via Reciprocal Rank Fusion (RRF)
+
+### Thinking and Caching
+- `Thinking and Caching/001_extended_thinking.ipynb`: extended thinking, how it works, when to use it, redacted thinking
+
+## FastAPI App
+
+A small student data API lives alongside the notebooks, used to practice endpoint generation with Claude Code.
 
 ```bash
 venv\Scripts\uvicorn main:app --reload
+# Docs at http://127.0.0.1:8000/docs
 ```
-
-API docs available at http://127.0.0.1:8000/docs
-
-## Endpoints
-
-- `GET /students` - Return all students
-- `GET /students/{student_id}` - Return a student by ID
-- `GET /students/major/{major}` - Return all students by major (case-insensitive)
-- `GET /students/subject/mathematics` - Return all students with Mathematics as their major
-- `POST /students` - Create a new student
-- `PUT /students/{student_id}` - Update a student by ID
-- `DELETE /students/{student_id}` - Delete a student by ID
-
-## Project Structure
-
-- `main.py` - FastAPI app with all endpoints and Pydantic models
-- `mock_students.json` - Mock student data loaded at startup (in-memory, not persisted)
-- `requirements.txt` - Python dependencies
-- `CLAUDE.md` - Guidance for Claude Code: dev commands, architecture notes, and project conventions
-- `.claude/skills/add-endpoint/` - Project skill for scaffolding new FastAPI endpoints
-- `.claude/skills/update-exp-readme/` - Project skill for updating this README
-- `.claude/agents/readme-updater-agent.md` - Custom agent for delegating README update tasks
