@@ -20,6 +20,6 @@ MCP doesn't care how client and server communicate. Most common is same-machine 
 7. MCP server calls the actual external service (e.g. GitHub)
 8. Result flows back → `CallToolResult` → your server → Claude
 9. Claude formulates final answer → user
-
+![alt text](image.png)
 ## Key Insight
 Each component has one clear job. The MCP client abstracts away all the communication complexity — your app just asks for tools and calls them, without worrying about the protocol details underneath.
