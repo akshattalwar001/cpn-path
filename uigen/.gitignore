@@ -5,3 +5,6 @@ node_modules/
 .next/
 prisma/dev.db
 src/generated/prisma/
+test-results/
+playwright-report/
+tests/manual/*.png
