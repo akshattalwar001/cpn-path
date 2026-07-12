@@ -1,0 +1,270 @@
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "53033ffc-4962-46cb-99a8-866acce10010",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "ls",
+    "description": "List files in current directory"
+  },
+  "tool_response": {
+    "stdout": "hooks\nREADME.md\nscripts\ntest",
+    "stderr": "",
+    "interrupted": false,
+    "isImage": false,
+    "noOutputExpected": false
+  },
+  "tool_use_id": "toolu_01B4kFtVXmM8iDF4teFMu4CD",
+  "duration_ms": 6293
+}
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Read",
+  "tool_input": {
+    "file_path": "C:\\Code\\exp\\Guardrail project\\post-log.json"
+  },
+  "tool_response": {
+    "type": "text",
+    "file": {
+      "filePath": "C:\\Code\\exp\\Guardrail project\\post-log.json",
+      "content": "{\n  \"session_id\": \"6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb\",\n  \"transcript_path\": \"C:\\\\Users\\\\bless\\\\.claude\\\\projects\\\\C--Code-exp-Guardrail-project\\\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl\",\n  \"cwd\": \"C:\\\\Code\\\\exp\\\\Guardrail project\",\n  \"prompt_id\": \"53033ffc-4962-46cb-99a8-866acce10010\",\n  \"permission_mode\": \"default\",\n  \"effort\": {\n    \"level\": \"high\"\n  },\n  \"hook_event_name\": \"PostToolUse\",\n  \"tool_name\": \"Bash\",\n  \"tool_input\": {\n    \"command\": \"ls\",\n    \"description\": \"List files in current directory\"\n  },\n  \"tool_response\": {\n    \"stdout\": \"hooks\\nREADME.md\\nscripts\\ntest\",\n    \"stderr\": \"\",\n    \"interrupted\": false,\n    \"isImage\": false,\n    \"noOutputExpected\": false\n  },\n  \"tool_use_id\": \"toolu_01B4kFtVXmM8iDF4teFMu4CD\",\n  \"duration_ms\": 6293\n}",
+      "numLines": 25,
+      "startLine": 1,
+      "totalLines": 25
+    }
+  },
+  "tool_use_id": "toolu_011rRUgQFw5ZHbNVaCGri3vF",
+  "duration_ms": 22
+}
+---
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "AskUserQuestion",
+  "tool_input": {
+    "questions": [
+      {
+        "question": "What should I repeat?",
+        "header": "Clarify \"again\"",
+        "options": [
+          {
+            "label": "Run `ls` again",
+            "description": "Re-run the original `ls` command to generate a fresh PostToolUse log entry in post-log.json"
+          },
+          {
+            "label": "Redo the sample.js comment edit",
+            "description": "Re-apply the comment edit to test/sample.js, likely to see the auto-format hook fail again"
+          },
+          {
+            "label": "Fix settings.json, then retry the edit",
+            "description": "Correct the hook filename mismatch (auto_format_edited_files.py vs auto-format-edited-files.py) first, then redo the edit so the hook actually runs"
+          }
+        ],
+        "multiSelect": false
+      }
+    ],
+    "answers": {
+      "What should I repeat?": "Redo the sample.js comment edit"
+    },
+    "annotations": {}
+  },
+  "tool_response": {
+    "questions": [
+      {
+        "question": "What should I repeat?",
+        "header": "Clarify \"again\"",
+        "options": [
+          {
+            "label": "Run `ls` again",
+            "description": "Re-run the original `ls` command to generate a fresh PostToolUse log entry in post-log.json"
+          },
+          {
+            "label": "Redo the sample.js comment edit",
+            "description": "Re-apply the comment edit to test/sample.js, likely to see the auto-format hook fail again"
+          },
+          {
+            "label": "Fix settings.json, then retry the edit",
+            "description": "Correct the hook filename mismatch (auto_format_edited_files.py vs auto-format-edited-files.py) first, then redo the edit so the hook actually runs"
+          }
+        ],
+        "multiSelect": false
+      }
+    ],
+    "answers": {
+      "What should I repeat?": "Redo the sample.js comment edit"
+    },
+    "annotations": {}
+  },
+  "tool_use_id": "toolu_01F3PxEktxmrTZGZt74v8W7U",
+  "duration_ms": 0
+}
+---
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Read",
+  "tool_input": {
+    "file_path": "C:\\Code\\exp\\Guardrail project\\test\\sample.js"
+  },
+  "tool_response": {
+    "type": "text",
+    "file": {
+      "filePath": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+      "content": "// Greets the given name via console output\nfunction   greet(name){\nconsole.log(\"Hello, \"+name)\n}\ngreet( \"world\" )",
+      "numLines": 5,
+      "startLine": 1,
+      "totalLines": 5
+    }
+  },
+  "tool_use_id": "toolu_01R5iPhoScNCT7xeYFv76feU",
+  "duration_ms": 45
+}
+---
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+    "old_string": "// Greets the given name via console output\nfunction   greet(name){",
+    "new_string": "// Greets the given name via console output\nfunction   greet(name){\n",
+    "replace_all": false
+  },
+  "tool_response": {
+    "filePath": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+    "oldString": "// Greets the given name via console output\nfunction   greet(name){",
+    "newString": "// Greets the given name via console output\nfunction   greet(name){\n",
+    "originalFile": "// Greets the given name via console output\nfunction   greet(name){\nconsole.log(\"Hello, \"+name)\n}\ngreet( \"world\" )",
+    "structuredPatch": [
+      {
+        "oldStart": 1,
+        "oldLines": 5,
+        "newStart": 1,
+        "newLines": 6,
+        "lines": [
+          " // Greets the given name via console output",
+          " function   greet(name){",
+          "+",
+          " console.log(\"Hello, \"+name)",
+          " }",
+          " greet( \"world\" )",
+          "\\ No newline at end of file"
+        ]
+      }
+    ],
+    "userModified": false,
+    "replaceAll": false
+  },
+  "tool_use_id": "toolu_01LTTsjsTHLSigqBkJQnhmdD",
+  "duration_ms": 150
+}
+---
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Read",
+  "tool_input": {
+    "file_path": "C:\\Code\\exp\\Guardrail project\\test\\sample.js"
+  },
+  "tool_response": {
+    "type": "text",
+    "file": {
+      "filePath": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+      "content": "// Greets the given name via console output\nfunction   greet(name){\n\nconsole.log(\"Hello, \"+name)\n}\ngreet( \"world\" )",
+      "numLines": 6,
+      "startLine": 1,
+      "totalLines": 6
+    }
+  },
+  "tool_use_id": "toolu_01P2CEjWGvxYCV8m6BgdA22f",
+  "duration_ms": 17
+}
+---
+{
+  "session_id": "6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb",
+  "transcript_path": "C:\\Users\\bless\\.claude\\projects\\C--Code-exp-Guardrail-project\\6596ea95-fa67-4c6c-8b2c-2c32a7fd40eb.jsonl",
+  "cwd": "C:\\Code\\exp\\Guardrail project",
+  "prompt_id": "337f5cca-cc69-492f-a074-e78bc0fabfae",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+    "old_string": "function   greet(name){\n\nconsole.log(\"Hello, \"+name)",
+    "new_string": "function   greet(name){\nconsole.log(\"Hello, \"+name)",
+    "replace_all": false
+  },
+  "tool_response": {
+    "filePath": "C:\\Code\\exp\\Guardrail project\\test\\sample.js",
+    "oldString": "function   greet(name){\n\nconsole.log(\"Hello, \"+name)",
+    "newString": "function   greet(name){\nconsole.log(\"Hello, \"+name)",
+    "originalFile": "// Greets the given name via console output\nfunction   greet(name){\n\nconsole.log(\"Hello, \"+name)\n}\ngreet( \"world\" )",
+    "structuredPatch": [
+      {
+        "oldStart": 1,
+        "oldLines": 6,
+        "newStart": 1,
+        "newLines": 5,
+        "lines": [
+          " // Greets the given name via console output",
+          " function   greet(name){",
+          "-",
+          " console.log(\"Hello, \"+name)",
+          " }",
+          " greet( \"world\" )",
+          "\\ No newline at end of file"
+        ]
+      }
+    ],
+    "userModified": false,
+    "replaceAll": false
+  },
+  "tool_use_id": "toolu_01FqNgpB6MYuaXR4T6JBaAZd",
+  "duration_ms": 146
+}
+---
