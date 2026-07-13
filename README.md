@@ -40,6 +40,8 @@ Open notebooks in VS Code and select the **Python (exp-venv)** kernel.
 
 ### Thinking and Caching
 - `Thinking and Caching/001_extended_thinking.ipynb`: extended thinking, how it works, when to use it, redacted thinking
+- `Thinking and Caching/002_sending_imahes_to_claude.ipynb`: sending images to Claude, size and token limits, why detailed step-by-step prompts beat simple questions
+- `Thinking and Caching/003_prompt_caching.ipynb`: prompt caching with `cache_control`, tracking cache write vs cache read tokens across repeated requests
 
 ## FastAPI App
 
