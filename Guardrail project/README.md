@@ -1,6 +1,6 @@
 # Guardrail
 
-A Claude Code hooks project that adds three safety/automation layers:
+A Claude Code hooks project that adds four safety/automation layers:
 
 ## What it does
 
@@ -12,7 +12,11 @@ A Claude Code hooks project that adds three safety/automation layers:
    Denies edits to protected files — `.env`, `secrets.json`, `*.pem`, `*.key`,
    `package-lock.json`, `yarn.lock`.
 
-3. **Auto-Format Edited Files** (`PostToolUse`, matcher: `Write|Edit`)
+3. **Inspect Input** (`PostToolUse`, matcher: `*`)
+   Logs every tool call's input and response to `post-log.json` for
+   debugging and auditing.
+
+4. **Auto-Format Edited Files** (`PostToolUse`, matcher: `Write|Edit`)
    Runs Prettier on `.js/.jsx/.ts/.tsx` files and Black on `.py` files
    automatically after Claude writes or edits them.
 
@@ -22,13 +26,15 @@ A Claude Code hooks project that adds three safety/automation layers:
     ├── .claude/
     │   └── settings.json          # hook config
     ├── hooks/
-    │   ├── block_dangerous_bash_commands.py
-    │   ├── protect_sensitive_files.py
-    │   └── auto_format_edited_files.py
+    │   ├── block-dangerous-bash-commands.py
+    │   ├── protect-sensitive-files.py
+    │   ├── inspect_input.py
+    │   └── auto-format-edited-files.py
     ├── test/                      # sample files for manual testing
     │   ├── sample.js
     │   ├── sample.py
     │   └── .env.test
+    ├── post-log.json              # output log from inspect_input hook
     └── README.md
 
 ## How hooks work here
@@ -43,7 +49,7 @@ A Claude Code hooks project that adds three safety/automation layers:
 Each hook reads JSON from stdin, so you can test it directly without
 Claude Code:
 
-    echo '{"tool_input": {"command": "rm -rf /tmp/test"}}' | python hooks/block_dangerous_bash_commands.py
+    echo '{"tool_input": {"command": "rm -rf /tmp/test"}}' | python hooks/block-dangerous-bash-commands.py
     echo "Exit code: $LASTEXITCODE"
 
 Exit code `2` = blocked, `0` = allowed.
@@ -52,4 +58,4 @@ Exit code `2` = blocked, `0` = allowed.
 
 - Python 3
 - `prettier` (via `npx`) for JS/TS formatting
-- `black` for Python formattingclaude
+- `black` for Python formatting
